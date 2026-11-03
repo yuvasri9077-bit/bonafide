@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard Demo</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html">Student Bonafide</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="track.html">Track Request</a>
+    <a href="dashboard.html">Approval Dashboard</a>
+  </nav>
+</header>
+<main class="container">
+  <div class="page-heading">
+    <div><p class="eyebrow">REQUEST REVIEW</p><h1>Bonafide Requests</h1></div>
+    <a class="btn secondary" href="index.html">Back to Home</a>
+  </div>
+  <p class="hint">Review requests, record fee dues, then approve in order: Office Manager followed by Principal.</p>
+  <div id="dashboard-notice" aria-live="polite"></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Application / Student</th><th>Course / Purpose</th><th>College Review</th><th>Fee Dues</th><th>Office Manager</th><th>Principal</th><th>Certificate</th></tr></thead>
+      <tbody id="requests-table"></tbody>
+    </table>
+  </div>
+  <p class="hint">This static HTML version stores requests in this browser only. It has no real user accounts, email notifications, or shared college database.</p>
+</main>
+<footer>Student Bonafide Management System</footer>
+<script src="static/script.js"></script>
+</body>
+</html>

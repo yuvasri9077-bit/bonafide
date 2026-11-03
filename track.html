@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Request</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html">Student Bonafide</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="track.html">Track Request</a>
+    <a href="dashboard.html">Approval Dashboard</a>
+  </nav>
+</header>
+<main class="container">
+  <section class="panel narrow">
+    <h1>Step 2: Track Your Request</h1>
+    <p>Enter your application ID and the email address used in your request.</p>
+    <form id="track-form" class="form-grid one-col">
+      <label>Application ID *<input type="number" min="1" name="request_id" required></label>
+      <label>Email Address *<input type="email" name="email" required></label>
+      <button class="btn" type="submit">Check Status</button>
+    </form>
+    <div id="track-result" aria-live="polite"></div>
+  </section>
+  <section class="panel" id="approval-next-step">
+    <h2>Next: College Review and Approvals</h2>
+    <p>After checking the status, continue to the dashboard to review dues and record approvals.</p>
+    <a class="btn" href="dashboard.html">Go to Step 3: Review &amp; Approvals</a>
+  </section>
+  <p class="hint">Requests are available only in the browser where they were submitted.</p>
+</main>
+<footer>Student Bonafide Management System</footer>
+<script src="static/script.js"></script>
+</body>
+</html>

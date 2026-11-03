@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Bonafide Management</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html">Student Bonafide</a>
+  <nav><span>Bonafide Request</span></nav>
+</header>
+<main class="container">
+  <div id="notice" aria-live="polite"></div>
+  <section class="hero">
+    <p class="eyebrow">COLLEGE STUDENT PORTAL</p>
+    <h1>Student Bonafide Management System</h1>
+    <p>Complete each step to request and download your certificate.</p>
+  </section>
+
+  <section class="panel wizard-slide" id="step-1">
+    <h2>Bonafide Request</h2>
+    <form id="request-form" class="form-grid">
+      <label>Student Name *<input name="student_name" required maxlength="120" placeholder="Enter your full name"></label>
+      <label>Register Number *<input name="register_number" required maxlength="40" placeholder="Enter register number"></label>
+      <label>Email Address *<input type="email" name="email" required maxlength="150" placeholder="name@example.com"></label>
+      <label>Engineering Department *<select name="department" required><option value="">Select department</option><option>Computer Science Engineering</option><option>Information Technology</option><option>Electronics and Communication Engineering</option><option>Electrical and Electronics Engineering</option><option>Mechanical Engineering</option><option>Civil Engineering</option><option>Other Engineering Department</option></select></label>
+      <label>Year of Study *<select name="year" required><option value="">Select year</option><option>I Year</option><option>II Year</option><option>III Year</option><option>IV Year</option></select></label>
+      <label>Academic Year *<input name="academic_year" required maxlength="20" placeholder="e.g. 2026-2027"></label>
+      <label class="full">Purpose *<select name="purpose" required><option value="">Select purpose</option><option>Scholarship</option><option>Education Loan</option><option>Passport</option><option>Bank Account</option><option>Internship</option><option>Other</option></select></label>
+      <button class="btn full" type="submit">Submit Request</button>
+    </form>
+  </section>
+
+  <section class="panel wizard-slide" id="step-2" hidden>
+    <h2>College Review</h2>
+    <p>Track with the application ID and email address from your request.</p>
+    <form id="track-form" class="form-grid one-col">
+      <label>Application ID *<input type="number" min="1" name="request_id" required></label>
+      <label>Email Address *<input type="email" name="email" required></label>
+      <button class="btn" type="submit">Check Request</button>
+    </form>
+    <div id="track-result" aria-live="polite"></div>
+    <div class="wizard-actions">
+      <button class="btn secondary" type="button" data-back="1">Back</button>
+      <button class="btn" id="review-complete" type="button" disabled>College Review Complete — Next</button>
+    </div>
+  </section>
+
+  <section class="panel wizard-slide" id="step-3" hidden>
+    <h2>Fee Dues</h2>
+    <p>Enter the fee balance. Enter 0 if there are no dues or all dues have been cleared.</p>
+    <label class="fee-entry">Fee dues (₹)<input id="wizard-fee-dues" type="number" min="0" step="0.01" placeholder="Enter amount; 0 = Nil"></label>
+    <div id="fee-status" aria-live="polite"></div>
+    <div class="wizard-actions">
+      <button class="btn secondary" type="button" data-back="2">Back</button>
+      <button class="btn" id="save-fees" type="button">Save Fee Dues</button>
+      <button class="btn" id="to-office-manager" type="button" disabled>Next: Office Manager</button>
+    </div>
+  </section>
+
+  <section class="panel wizard-slide" id="step-4" hidden>
+    <h2>Office Manager Approval</h2>
+    <p id="office-manager-status">Pending</p>
+    <div class="wizard-actions">
+      <button class="btn secondary" type="button" data-back="3">Back</button>
+      <button class="btn" id="approve-office-manager" type="button" disabled>Approve — Next</button>
+    </div>
+  </section>
+
+  <section class="panel wizard-slide" id="step-5" hidden>
+    <h2>Principal Approval</h2>
+    <p id="principal-status">Pending</p>
+    <div class="wizard-actions">
+      <button class="btn secondary" type="button" data-back="4">Back</button>
+      <button class="btn" id="approve-principal" type="button" disabled>Approve — View Certificate</button>
+    </div>
+  </section>
+
+  <section class="panel wizard-slide" id="step-6" hidden>
+    <h2>Bonafide Certificate</h2>
+    <section class="certificate" id="inline-certificate">
+      <div class="cert-header">
+        <p class="college-name">YOUR COLLEGE NAME</p>
+        <h1>BONAFIDE CERTIFICATE</h1>
+      </div>
+      <hr>
+      <p class="cert-body">
+        This is to certify that <b data-field="student_name"></b>
+        (Register Number: <b data-field="register_number"></b>) is a bonafide student of this institution,
+        pursuing <b data-field="year"></b> in the Department of <b data-field="department"></b>
+        during the academic year <b data-field="academic_year"></b>.
+      </p>
+      <p class="cert-body">This certificate is issued for the purpose of <b data-field="purpose"></b>.</p>
+      <div class="cert-bottom">
+        <span>Date: <span data-field="request_date"></span></span>
+        <span class="cert-signature">Principal / Authorized Signatory</span>
+      </div>
+      <button class="btn no-print" type="button" onclick="window.print()">Download / Print PDF</button>
+    </section>
+    <div class="wizard-actions"><button class="btn secondary" type="button" data-back="5">Back</button></div>
+  </section>
+
+  <p class="hint">Demo only: requests are saved in this browser and are not sent to a college or server.</p>
+</main>
+<footer>Student Bonafide Management System</footer>
+<script src="static/script.js"></script>
+</body>
+</html>

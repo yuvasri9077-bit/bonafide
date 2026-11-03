@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bonafide Certificate Template</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 24px; background: #f5f7fb; color: #1f2937; font-family: Arial, Helvetica, sans-serif; }
+    .container { max-width: 900px; margin: 0 auto; }
+    .certificate { margin: 0 auto; padding: 52px 60px; background: #fff; border: 5px double #334155; text-align: center; }
+    .cert-header { color: #142b4a; }
+    .college-name { margin: 0 0 14px; font-size: 22px; font-weight: 700; letter-spacing: 1px; }
+    h1 { margin: 0 0 20px; letter-spacing: 2px; }
+    hr { border: 0; border-top: 1px solid #dbe3ef; }
+    .cert-body { margin: 30px 0; font-size: 18px; line-height: 2; text-align: justify; }
+    .cert-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-top: 72px; font-weight: 700; text-align: left; }
+    .cert-signature { min-width: 220px; padding-top: 10px; border-top: 1px solid #1f2937; text-align: center; }
+    .btn { display: inline-block; margin-top: 28px; padding: 12px 18px; border: 0; border-radius: 8px; background: #2563eb; color: #fff; font-weight: 700; cursor: pointer; }
+    @media (max-width: 600px) {
+      body { padding: 12px; }
+      .certificate { padding: 28px 22px; }
+      .cert-body { font-size: 16px; }
+      .cert-bottom { align-items: flex-start; flex-direction: column; gap: 42px; }
+    }
+    @media print {
+      body { padding: 0; background: #fff; }
+      .certificate { min-height: 95vh; border-color: #333; }
+      .no-print { display: none; }
+    }
+  </style>
+</head>
+<body>
+<main class="container">
+  <section class="certificate">
+    <div class="cert-header">
+      <p class="college-name">[COLLEGE NAME]</p>
+      <h1>BONAFIDE CERTIFICATE</h1>
+    </div>
+    <hr>
+    <p class="cert-body">
+      This is to certify that <b>[STUDENT NAME]</b>
+      (Register Number: <b>[REGISTER NUMBER]</b>) is a bonafide student of this institution,
+      pursuing <b>[YEAR OF STUDY]</b> in the Department of <b>[DEPARTMENT]</b>
+      during the academic year <b>[ACADEMIC YEAR]</b>.
+    </p>
+    <p class="cert-body">
+      This certificate is issued for the purpose of <b>[PURPOSE]</b>.
+    </p>
+    <div class="cert-bottom">
+      <span>Date: [DATE]</span>
+      <span class="cert-signature">Principal / Authorized Signatory</span>
+    </div>
+    <button class="btn no-print" type="button" onclick="window.print()">Print / Save as PDF</button>
+  </section>
+</main>
+</body>
+</html>

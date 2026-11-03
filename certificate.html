@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bonafide Certificate</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+<main class="container">
+  <div id="certificate-message" aria-live="polite"></div>
+  <section class="certificate" id="certificate">
+    <div class="cert-header">
+      <p class="college-name">YOUR COLLEGE NAME</p>
+      <h1>BONAFIDE CERTIFICATE</h1>
+    </div>
+    <hr>
+    <p class="cert-body">
+      This is to certify that <b data-field="student_name">[STUDENT NAME]</b>
+      (Register Number: <b data-field="register_number">[REGISTER NUMBER]</b>) is a bonafide
+      student of this institution, pursuing <b data-field="year">[YEAR]</b> in the
+      Department of <b data-field="department">[DEPARTMENT]</b> during the academic year
+      <b data-field="academic_year">[ACADEMIC YEAR]</b>.
+    </p>
+    <p class="cert-body">This certificate is issued for the purpose of <b data-field="purpose">[PURPOSE]</b>.</p>
+    <div class="cert-bottom">
+      <span class="cert-date">Date: <span data-field="request_date">[DD-MM-YYYY]</span></span>
+      <span class="cert-signature">Principal / Authorized Signatory</span>
+    </div>
+    <button class="btn no-print" type="button" onclick="window.print()">Download / Print PDF</button>
+  </section>
+</main>
+<script src="static/script.js"></script>
+</body>
+</html>
